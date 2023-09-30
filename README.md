@@ -1,6 +1,6 @@
 # Keras Implementation of VideoMAE (NeurIPS 2022 Spotlight).
 
-![videomae](assets\videomae.jpg)
+![videomae](./assets/videomae.jpg)
 
 
 ```python
