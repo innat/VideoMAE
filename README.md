@@ -3,12 +3,7 @@
 ![videomae](assets\videomae.jpg)
 
 
-
 ```python
-
-from videomae_pretrain import TFPretrainVisionTransformer
-from layers import TubeMaskingGenerator
-
 def tf_pretrain_videomae_small_patch16_224(**kwargs):
     model = TFPretrainVisionTransformer(
         img_size=224,
@@ -28,7 +23,6 @@ def tf_pretrain_videomae_small_patch16_224(**kwargs):
     )
     return model
 
-# model
 model_tf = tf_vit_small_patch16_224(num_classes=400)
 model_tf.load_weights('TFVideoMAE_B_16x224_PT')
 ```
@@ -45,7 +39,7 @@ bool_masked_pos_tf = tf.expand_dims(bool_masked_pos_tf, axis=0)
 bool_masked_pos_tf = tf.cast(bool_masked_pos_tf, tf.bool)
 bool_masked_pos_tf
 
-
+# running
 pred_tf = model_tf(
     tf.ones(shape=(1, 16, 224, 224, 3)), bool_masked_pos_tf
 )
@@ -53,9 +47,6 @@ pred_tf.numpy().shape
 TensorShape([1, 1176, 1536])
 ```
 
-
-
----
 
 # Model Zoo
 
