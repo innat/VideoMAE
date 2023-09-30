@@ -1,13 +1,18 @@
 
 from functools import partial
+import os
+import warnings
+
+warnings.simplefilter(action="ignore")
+os.environ["TF_CPP_MIN_LOG_LEVEL"] = "3"
 
 import tensorflow as tf
 from tensorflow import keras
 from tensorflow.keras import layers
 from tensorflow.keras.initializers import RandomNormal
 
-from block import TFPretrainVisionTransformerEncoder
-from block import TFPretrainVisionTransformerDecoder
+from blocks import TFPretrainVisionTransformerEncoder
+from blocks import TFPretrainVisionTransformerDecoder
 from utils import get_sinusoid_encoding_table_tf
 
 
