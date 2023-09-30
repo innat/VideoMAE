@@ -129,3 +129,64 @@ class TFVisionTransformer(keras.Model):
     def build_graph(self):
         x = keras.Input(shape=self.build_shape, name='input_graph')
         return keras.Model(inputs=[x], outputs=self.call(x))
+    
+
+
+def tf_vit_small_patch16_224(**kwargs):
+    model = TFVisionTransformer(
+        patch_size=16, embed_dim=384, depth=12, num_heads=6, mlp_ratio=4, qkv_bias=True,
+        norm_layer=partial(layers.LayerNormalization, epsilon=1e-6), drop_path_rate=0.1,
+        name='TFVideoMAE_S_16x224_FT', 
+        **kwargs
+    )
+    return model
+
+
+def tf_vit_base_patch16_224(**kwargs):
+    model = TFVisionTransformer(
+        patch_size=16, embed_dim=768, depth=12, num_heads=12, mlp_ratio=4, qkv_bias=True,
+        norm_layer=partial(layers.LayerNormalization, epsilon=1e-6), name='TFVideoMAE_B_16x224_FT', 
+        **kwargs
+    )
+    return model
+
+def tf_vit_base_patch16_384(**kwargs):
+    model = TFVisionTransformer(
+        img_size=384, patch_size=16, embed_dim=768, depth=12, num_heads=12, mlp_ratio=4, qkv_bias=True,
+        norm_layer=partial(layers.LayerNormalization, epsilon=1e-6), name='TFVideoMAE_B_16x384_FT', 
+        **kwargs
+    )
+    return model
+
+
+def tf_vit_large_patch16_224(**kwargs):
+    model = TFVisionTransformer(
+        patch_size=16, embed_dim=1024, depth=24, num_heads=16, mlp_ratio=4, qkv_bias=True,
+        norm_layer=partial(layers.LayerNormalization, epsilon=1e-6), name='TFVideoMAE_L_16x224_FT', 
+        **kwargs
+    )
+    return model
+
+def tf_vit_large_patch16_384(**kwargs):
+    model = TFVisionTransformer(
+        img_size=384, patch_size=16, embed_dim=1024, depth=24, num_heads=16, mlp_ratio=4, qkv_bias=True,
+        norm_layer=partial(layers.LayerNormalization, epsilon=1e-6), name='TFVideoMAE_L_16x384_FT', 
+        **kwargs
+    )
+    return model
+
+def tf_vit_large_patch16_512(**kwargs):
+    model = TFVisionTransformer(
+        img_size=512, patch_size=16, embed_dim=1024, depth=24, num_heads=16, mlp_ratio=4, qkv_bias=True,
+        norm_layer=partial(layers.LayerNormalization, epsilon=1e-6), name='TFVideoMAE_L_16x512_FT', 
+        **kwargs
+    )
+    return model
+
+def tf_vit_huge_patch16_224(**kwargs):
+    model = TFVisionTransformer(
+        patch_size=16, embed_dim=1280, depth=32, num_heads=16, mlp_ratio=4, qkv_bias=True,
+        norm_layer=partial(layers.LayerNormalization, epsilon=1e-6), name='TFVideoMAE_H_16x224_FT', 
+        **kwargs
+    )
+    return model
