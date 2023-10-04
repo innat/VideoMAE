@@ -14,7 +14,7 @@ from tensorflow.keras.initializers import RandomNormal
 from videomae.blocks import TFPretrainVisionTransformerEncoder
 from videomae.blocks import TFPretrainVisionTransformerDecoder
 from videomae.utils import get_sinusoid_encoding_table_tf
-
+from .model_configs import MODEL_CONFIGS
 
 class TFPretrainVisionTransformer(keras.Model):
     def __init__(
@@ -35,11 +35,10 @@ class TFPretrainVisionTransformer(keras.Model):
         drop_rate=0., 
         attn_drop_rate=0., 
         drop_path_rate=0., 
-        norm_layer=layers.LayerNormalization, 
+        norm_layer=partial(layers.LayerNormalization, epsilon=1e-5), 
         init_values=0., 
         use_learnable_pos_emb=False, 
         tubelet_size=2, 
-        num_classes=0, 
         **kwargs
     ):
         super().__init__(**kwargs)
@@ -106,85 +105,27 @@ class TFPretrainVisionTransformer(keras.Model):
     
 
 
-def tf_pretrain_videomae_small_patch16_224(**kwargs):
-    model = TFPretrainVisionTransformer(
-        img_size=224,
-        patch_size=16,
-        encoder_embed_dim=384,
-        encoder_depth=12,
-        encoder_num_heads=6,
-        encoder_num_classes=0,
-        decoder_num_classes=1536, 
-        decoder_embed_dim=192, 
-        decoder_num_heads=3,
-        decoder_depth=4,
-        mlp_ratio=4,
-        qkv_bias=True,
-        norm_layer=partial(layers.LayerNormalization, epsilon=1e-6),
-        name='TFVideoMAE_S_16x224_PT',
-        **kwargs
-    )
+
+def VideoMAE_ViTS16PT(name='TFVideoMAE_S_16x224_PT', **kwargs):
+    config = MODEL_CONFIGS[name].copy()
+    config.update(kwargs)
+    model = TFPretrainVisionTransformer(name=name, **config)
     return model
 
-
-def tf_pretrain_videomae_base_patch16_224(**kwargs):
-    model = TFPretrainVisionTransformer(
-        img_size=224,
-        patch_size=16, 
-        encoder_embed_dim=768, 
-        encoder_depth=12, 
-        encoder_num_heads=12,
-        encoder_num_classes=0,
-        decoder_num_classes=1536,
-        decoder_embed_dim=384,
-        decoder_num_heads=6,
-        decoder_depth=4,
-        mlp_ratio=4, 
-        qkv_bias=True,
-        norm_layer=partial(layers.LayerNormalization, epsilon=1e-6),
-        name='TFVideoMAE_B_16x224_PT',
-        **kwargs
-    )
+def VideoMAE_ViTB16PT(name='TFVideoMAE_B_16x224_PT', **kwargs):
+    config = MODEL_CONFIGS[name].copy()
+    config.update(kwargs)
+    model = TFPretrainVisionTransformer(name=name, **config)
     return model
 
-
-def tf_pretrain_videomae_large_patch16_224(**kwargs):
-    model = TFPretrainVisionTransformer(
-        img_size=224,
-        patch_size=16, 
-        encoder_embed_dim=1024, 
-        encoder_depth=24, 
-        encoder_num_heads=16,
-        encoder_num_classes=0,
-        decoder_num_classes=1536, 
-        decoder_embed_dim=512,
-        decoder_num_heads=8,
-        decoder_depth=12,
-        mlp_ratio=4, 
-        qkv_bias=True,
-        norm_layer=partial(layers.LayerNormalization, epsilon=1e-6),
-        name='TFVideoMAE_L_16x224_PT',
-        **kwargs
-    )
+def VideoMAE_ViTL16PT(name='TFVideoMAE_L_16x224_PT', **kwargs):
+    config = MODEL_CONFIGS[name].copy()
+    config.update(kwargs)
+    model = TFPretrainVisionTransformer(name=name, **config)
     return model
 
-
-def tf_pretrain_videomae_huge_patch16_224(**kwargs):
-    model = TFPretrainVisionTransformer(
-        img_size=224,
-        patch_size=16, 
-        encoder_embed_dim=1280, 
-        encoder_depth=32, 
-        encoder_num_heads=16,
-        encoder_num_classes=0,
-        decoder_num_classes=1536, 
-        decoder_embed_dim=640,
-        decoder_num_heads=8,
-        decoder_depth=12,
-        mlp_ratio=4, 
-        qkv_bias=True,
-        norm_layer=partial(layers.LayerNormalization, epsilon=1e-6),
-        name='TFVideoMAE_H_16x224_PT',
-        **kwargs
-    )
+def VideoMAE_ViTH16PT(name='TFVideoMAE_H_16x224_PT', **kwargs):
+    config = MODEL_CONFIGS[name].copy()
+    config.update(kwargs)
+    model = TFPretrainVisionTransformer(name=name, **config)
     return model

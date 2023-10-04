@@ -137,25 +137,25 @@ class TFVisionTransformer(keras.Model):
     
 
 
-def VideoMAE_ViTS16(name='TFVideoMAE_S_16x224_FT', **kwargs):
+def VideoMAE_ViTS16FT(name='TFVideoMAE_S_16x224_FT', **kwargs):
     config = MODEL_CONFIGS[name].copy()
     config.update(kwargs)
     model = TFVisionTransformer(name=name, **config)
     return model
 
-def VideoMAE_ViTB16(name='TFVideoMAE_B_16x224_FT', **kwargs):
+def VideoMAE_ViTB16FT(name='TFVideoMAE_B_16x224_FT', **kwargs):
     config = MODEL_CONFIGS[name].copy()
     config.update(kwargs)
     model = TFVisionTransformer(name=name, **kwargs)
     return model
 
-def VideoMAE_ViTL16(name='TFVideoMAE_L_16x224_FT', **kwargs):
+def VideoMAE_ViTL16FT(name='TFVideoMAE_L_16x224_FT', **kwargs):
     config = MODEL_CONFIGS[name].copy()
     config.update(kwargs)
     model = TFVisionTransformer(name=name, **kwargs)
     return model
 
-def VideoMAE_ViTH16(name='TFVideoMAE_H_16x224_FT', **kwargs):
+def VideoMAE_ViTH16FT(name='TFVideoMAE_H_16x224_FT', **kwargs):
     config = MODEL_CONFIGS[name].copy()
     config.update(kwargs)
     model = TFVisionTransformer(name=name, **kwargs)
