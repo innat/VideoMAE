@@ -6,36 +6,39 @@
 This is a `Keras` reimplementation of [VideoMAE: Masked Autoencoders are Data-Efficient Learners for Self-Supervised Video Pre-Training](https://arxiv.org/abs/2203.12602) model. The official `PyTorch` implementation can be found [here](https://github.com/MCG-NJU/VideoMAE).
 
 
-
-
 ## Pre Trained Self-Supervised Model
 
 ```python
+
+from videomae import VideoMAE_ViTS16PT
+
+# pre-trained self-supervised model
+>>> model = VideoMAE_ViTS16PT(num_classes=400)
+
 # tube masking
-tube_mask = TubeMaskingGenerator(
+>>> tube_mask = TubeMaskingGenerator(
     input_size=window_size, 
     mask_ratio=0.75
 )
-make_bool = tube_mask()
-bool_masked_pos_tf = tf.constant(make_bool, dtype=tf.int32)
-bool_masked_pos_tf = tf.expand_dims(bool_masked_pos_tf, axis=0)
-bool_masked_pos_tf = tf.cast(bool_masked_pos_tf, tf.bool)
-bool_masked_pos_tf
+>>> make_bool = tube_mask()
+>>> bool_masked_pos_tf = tf.constant(make_bool, dtype=tf.int32)
+>>> bool_masked_pos_tf = tf.expand_dims(bool_masked_pos_tf, axis=0)
+>>> bool_masked_pos_tf = tf.cast(bool_masked_pos_tf, tf.bool)
 
 # running
-pred_tf = model_tf(
+>>> pred_tf = model(
     tf.ones(shape=(1, 16, 224, 224, 3)), bool_masked_pos_tf
 )
-pred_tf.numpy().shape
+>>> pred_tf.numpy().shape
 TensorShape([1, 1176, 1536])
 ```
 
 ## Fine Tuned Model
 
 ```python
-from videomae import VideoMAE_ViTS16
+from videomae import VideoMAE_ViTS16FT
 
->>> model = VideoMAE_ViTS16(num_classes=400)
+>>> model = VideoMAE_ViTS16FT(num_classes=400)
 >>> y = model(np.ones((1, 16, 224, 224, 3)))
 >>> y.shape
 TensorShape([1, 400])
