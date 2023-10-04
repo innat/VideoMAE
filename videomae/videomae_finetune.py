@@ -11,11 +11,11 @@ from tensorflow import keras
 from tensorflow.keras import layers
 from tensorflow.keras.initializers import TruncatedNormal
 
-from layers import TFPatchEmbed
-from layers import TFAttention
-from blocks import TFBlock
-from utils import get_sinusoid_encoding_table_tf
-from model_configs import MODEL_CONFIGS
+from videomae.layers import TFPatchEmbed
+from videomae.layers import TFAttention
+from videomae.blocks import TFBlock
+from videomae.utils import get_sinusoid_encoding_table_tf
+from .model_configs import MODEL_CONFIGS
 
 
 class TFVisionTransformer(keras.Model):

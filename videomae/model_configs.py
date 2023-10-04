@@ -9,6 +9,7 @@ MODEL_CONFIGS = {
         "mlp_ratio": 4,
         "qkv_bias": True,
         "drop_path_rate": 0.1,
+        "num_classes": 400,
     },
 
     "TFVideoMAE_B_16x224_FT": {
@@ -20,6 +21,7 @@ MODEL_CONFIGS = {
         "mlp_ratio": 4,
         "qkv_bias": True,
         "drop_path_rate": 0.1,
+        "num_classes": 400,
     },
 
     "TFVideoMAE_B_16x384_FT": {
@@ -31,6 +33,7 @@ MODEL_CONFIGS = {
         "mlp_ratio": 4,
         "qkv_bias": True,
         "drop_path_rate": 0.1,
+        "num_classes": 400,
     },
 
     "TFVideoMAE_L_16x224_FT": {
@@ -42,6 +45,7 @@ MODEL_CONFIGS = {
         "mlp_ratio": 4,
         "qkv_bias": True,
         "drop_path_rate": 0.1,
+        "num_classes": 400,
     },
 
     "TFVideoMAE_L_16x384_FT": {
@@ -53,6 +57,7 @@ MODEL_CONFIGS = {
         "mlp_ratio": 4,
         "qkv_bias": True,
         "drop_path_rate": 0.1,
+        "num_classes": 400,
     },
 
     "TFVideoMAE_L_16x512_FT": {
@@ -64,6 +69,7 @@ MODEL_CONFIGS = {
         "mlp_ratio": 4,
         "qkv_bias": True,
         "drop_path_rate": 0.1,
+        "num_classes": 400,
     },
 
     "TFVideoMAE_H_16x224_FT": {
@@ -75,5 +81,6 @@ MODEL_CONFIGS = {
         "mlp_ratio": 4,
         "qkv_bias": True,
         "drop_path_rate": 0.1,
+        "num_classes": 400,
     },
 }

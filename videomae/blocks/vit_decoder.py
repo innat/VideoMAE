@@ -5,8 +5,8 @@ import tensorflow as tf
 from tensorflow import keras
 from tensorflow.keras import layers
 
-from layers import TFAttention
-from blocks import TFBlock
+from videomae.layers import TFAttention
+from videomae.blocks import TFBlock
 
 
 class TFPretrainVisionTransformerDecoder(keras.Model):

@@ -4,9 +4,9 @@ from tensorflow import keras
 from tensorflow.keras import layers
 from tensorflow.keras.initializers import Constant
 
-from layers import TFMlp
-from layers import TFAttention
-from layers import TFDropPath
+from videomae.layers import TFMlp
+from videomae.layers import TFAttention
+from videomae.layers import TFDropPath
 
 class TFBlock(keras.Model):
     def __init__(

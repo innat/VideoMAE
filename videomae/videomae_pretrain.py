@@ -11,9 +11,9 @@ from tensorflow import keras
 from tensorflow.keras import layers
 from tensorflow.keras.initializers import RandomNormal
 
-from blocks import TFPretrainVisionTransformerEncoder
-from blocks import TFPretrainVisionTransformerDecoder
-from utils import get_sinusoid_encoding_table_tf
+from videomae.blocks import TFPretrainVisionTransformerEncoder
+from videomae.blocks import TFPretrainVisionTransformerDecoder
+from videomae.utils import get_sinusoid_encoding_table_tf
 
 
 class TFPretrainVisionTransformer(keras.Model):

@@ -1,0 +1,6 @@
+
+from videomae.videomae_finetune import VideoMAE_ViTS16
+from videomae.videomae_finetune import VideoMAE_ViTB16
+from videomae.videomae_finetune import VideoMAE_ViTL16
+from videomae.videomae_finetune import VideoMAE_ViTH16
+
