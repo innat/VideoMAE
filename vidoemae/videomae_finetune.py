@@ -15,6 +15,7 @@ from layers import TFPatchEmbed
 from layers import TFAttention
 from blocks import TFBlock
 from utils import get_sinusoid_encoding_table_tf
+from model_configs import MODEL_CONFIGS
 
 
 class TFVisionTransformer(keras.Model):
@@ -32,11 +33,10 @@ class TFVisionTransformer(keras.Model):
         fc_drop_rate=0., 
         drop_rate=0., 
         attn_drop_rate=0.,
-        drop_path_rate=0., 
-        norm_layer=layers.LayerNormalization, 
+        drop_path_rate=0.,  
+        norm_layer=partial(layers.LayerNormalization, epsilon=1e-5), 
         init_values=0.,
         use_learnable_pos_emb=False, 
-        init_scale=0.,
         all_frames=16,
         tubelet_size=2,
         use_mean_pooling=True, 
@@ -137,61 +137,27 @@ class TFVisionTransformer(keras.Model):
     
 
 
-def tf_vit_small_patch16_224(**kwargs):
-    model = TFVisionTransformer(
-        patch_size=16, embed_dim=384, depth=12, num_heads=6, mlp_ratio=4, qkv_bias=True,
-        norm_layer=partial(layers.LayerNormalization, epsilon=1e-6), drop_path_rate=0.1,
-        name='TFVideoMAE_S_16x224_FT', 
-        **kwargs
-    )
+def VideoMAE_ViTS16(name='TFVideoMAE_S_16x224_FT', **kwargs):
+    config = MODEL_CONFIGS[name].copy()
+    config.update(kwargs)
+    model = TFVisionTransformer(name=name, **config)
     return model
 
-
-def tf_vit_base_patch16_224(**kwargs):
-    model = TFVisionTransformer(
-        patch_size=16, embed_dim=768, depth=12, num_heads=12, mlp_ratio=4, qkv_bias=True,
-        norm_layer=partial(layers.LayerNormalization, epsilon=1e-6), name='TFVideoMAE_B_16x224_FT', 
-        **kwargs
-    )
+def VideoMAE_ViTB16(name='TFVideoMAE_B_16x224_FT', **kwargs):
+    config = MODEL_CONFIGS[name].copy()
+    config.update(kwargs)
+    model = TFVisionTransformer(name=name, **kwargs)
     return model
 
-def tf_vit_base_patch16_384(**kwargs):
-    model = TFVisionTransformer(
-        img_size=384, patch_size=16, embed_dim=768, depth=12, num_heads=12, mlp_ratio=4, qkv_bias=True,
-        norm_layer=partial(layers.LayerNormalization, epsilon=1e-6), name='TFVideoMAE_B_16x384_FT', 
-        **kwargs
-    )
+def VideoMAE_ViTL16(name='TFVideoMAE_L_16x224_FT', **kwargs):
+    config = MODEL_CONFIGS[name].copy()
+    config.update(kwargs)
+    model = TFVisionTransformer(name=name, **kwargs)
     return model
 
-
-def tf_vit_large_patch16_224(**kwargs):
-    model = TFVisionTransformer(
-        patch_size=16, embed_dim=1024, depth=24, num_heads=16, mlp_ratio=4, qkv_bias=True,
-        norm_layer=partial(layers.LayerNormalization, epsilon=1e-6), name='TFVideoMAE_L_16x224_FT', 
-        **kwargs
-    )
+def VideoMAE_ViTH16(name='TFVideoMAE_H_16x224_FT', **kwargs):
+    config = MODEL_CONFIGS[name].copy()
+    config.update(kwargs)
+    model = TFVisionTransformer(name=name, **kwargs)
     return model
 
-def tf_vit_large_patch16_384(**kwargs):
-    model = TFVisionTransformer(
-        img_size=384, patch_size=16, embed_dim=1024, depth=24, num_heads=16, mlp_ratio=4, qkv_bias=True,
-        norm_layer=partial(layers.LayerNormalization, epsilon=1e-6), name='TFVideoMAE_L_16x384_FT', 
-        **kwargs
-    )
-    return model
-
-def tf_vit_large_patch16_512(**kwargs):
-    model = TFVisionTransformer(
-        img_size=512, patch_size=16, embed_dim=1024, depth=24, num_heads=16, mlp_ratio=4, qkv_bias=True,
-        norm_layer=partial(layers.LayerNormalization, epsilon=1e-6), name='TFVideoMAE_L_16x512_FT', 
-        **kwargs
-    )
-    return model
-
-def tf_vit_huge_patch16_224(**kwargs):
-    model = TFVisionTransformer(
-        patch_size=16, embed_dim=1280, depth=32, num_heads=16, mlp_ratio=4, qkv_bias=True,
-        norm_layer=partial(layers.LayerNormalization, epsilon=1e-6), name='TFVideoMAE_H_16x224_FT', 
-        **kwargs
-    )
-    return model
