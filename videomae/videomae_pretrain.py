@@ -35,7 +35,7 @@ class TFPretrainVisionTransformer(keras.Model):
         drop_rate=0., 
         attn_drop_rate=0., 
         drop_path_rate=0., 
-        norm_layer=partial(layers.LayerNormalization, epsilon=1e-5), 
+        norm_layer=partial(layers.LayerNormalization, epsilon=1e-6), 
         init_values=0., 
         use_learnable_pos_emb=False, 
         tubelet_size=2, 
