@@ -50,4 +50,13 @@ TensorShape([1, 400])
 The pre-trained and fine-tuned models are listed in [MODEL_ZOO.md](MODEL_ZOO.md).
 
 
+# Visualization 
+
+Masked Autoencoder with `mask_ratio=0.8` from pretrained self-supervised video-mae model.
+
+![](./assets/k400.gif)
+
+![](./assets/ssv2.gif)
+
+![](./assets/ucf101.gif)
 
