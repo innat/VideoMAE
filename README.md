@@ -3,6 +3,8 @@
 ![videomae](./assets/videomae.jpg)
 
 
+[![TensorFlow 2.12](https://img.shields.io/badge/TensorFlow-2.10-FF6F00?logo=tensorflow)](?) [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](?) [![HugginFace badge](https://img.shields.io/badge/🤗%20Hugging%20Face-Spaces-yellow.svg)](?) [![HugginFace badge](https://img.shields.io/badge/🤗%20Hugging%20Face-Hub-yellow.svg)](?)
+
 This is a `Keras` reimplementation of [VideoMAE: Masked Autoencoders are Data-Efficient Learners for Self-Supervised Video Pre-Training](https://arxiv.org/abs/2203.12602) model. The official `PyTorch` implementation can be found [here](https://github.com/MCG-NJU/VideoMAE).
 
 
@@ -60,3 +62,13 @@ Masked Autoencoder with `mask_ratio=0.8` from pretrained self-supervised video-m
 
 ![](./assets/ucf101.gif)
 
+# XLA Compatible
+
+All the variants of converted videomae `keras` models are XLA compatible. They are evaluated on **TPU-VM** to reproduce the official reported scores.
+
+# TODO
+
+- [x] Multi-GPU suppport.
+- [x] TPU support.
+- [ ] Self-supervised training mechanism.
+- [ ] Convert to `Keras V3`to support multi-framework backend.
