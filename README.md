@@ -10,8 +10,9 @@ This is a `Keras` reimplementation of [VideoMAE: Masked Autoencoders are Data-Ef
 
 ## Pre Trained Self-Supervised Model
 
-```python
+The pre-trained video-mae model consist of encoder and deconder module. This models are trained in self-supervised manner on the benchmark dataset.
 
+```python
 from videomae import VideoMAE_ViTS16PT
 
 # pre-trained self-supervised model
@@ -36,6 +37,8 @@ TensorShape([1, 1176, 1536])
 ```
 
 ## Fine Tuned Model
+
+The fine tuned model is the encoder part of pre-trained model which is used to model for specific target classes.
 
 ```python
 from videomae import VideoMAE_ViTS16FT
