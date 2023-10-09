@@ -5,7 +5,6 @@
 For Kinetrics-400, VideoMAE is trained around **1600** epoch without **any extra data**. The following checkpoints are available in both tensorflow [`SavedModel`](https://www.tensorflow.org/guide/saved_model) and [`h5`](https://keras.io/api/saving/weights_saving_and_loading/#save_weights-method) format.
 
 
-
 | Backbone | \#Frame | Pre-train | Fine-tune | Top-1 | Top-5 |
  | :--: | :--: | :--: | :--: | :---: | :---: |
   ViT-S    | 16x5x3  | [SavedModel](https://github.com/innat/VideoMAE/releases/download/v1.1/TFVideoMAE_S_K400_16x224_PT.zip)/[h5](https://github.com/innat/VideoMAE/releases/download/v1.0/TFVideoMAE_S_K400_16x224_PT.h5) | [SavedModel](https://github.com/innat/VideoMAE/releases/download/v1.1/TFVideoMAE_S_K400_16x224_FT.zip)/[h5](https://github.com/innat/VideoMAE/releases/download/v1.0/TFVideoMAE_S_16x224_FT.h5) | 79.0 | 93.8   |
@@ -13,6 +12,7 @@ For Kinetrics-400, VideoMAE is trained around **1600** epoch without **any extra
   ViT-L    | 16x5x3  | [SavedModel](https://github.com/innat/VideoMAE/releases/download/v1.1/TFVideoMAE_L_K400_16x224_PT.zip)/[h5](https://github.com/innat/VideoMAE/releases/download/v1.0/TFVideoMAE_L_K400_16x224_PT.h5) | [SavedModel](https://github.com/innat/VideoMAE/releases/download/v1.0/TFVideoMAE_L_K400_16x224_FT.h5)/[h5](https://github.com/innat/VideoMAE/releases/download/v1.0/TFVideoMAE_L_K400_16x224_FT.h5) | 85.2  | 96.8  |
   ViT-H    | 16x5x3  | ? | [SavedModel]()/[h5]() | 86.6 | 97.1   |
 
+<sup>?* Official `ViT-H` backbone of VideoMAE has weight issue, details https://github.com/MCG-NJU/VideoMAE/issues/89</sup>
 
 ### Something-Something V2
 
