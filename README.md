@@ -59,32 +59,32 @@ The pre-trained and fine-tuned models are listed in [MODEL_ZOO.md](MODEL_ZOO.md)
 For Kinetrics-400, VideoMAE is trained around **1600** epoch without **any extra data**. The following checkpoints are available in both tensorflow `SavedModel` and `h5` format.
 
 
-| Backbone | \#Frame | Top-1 | Top-5 | FLOPS | Params |
+| Backbone | \#Frame | Top-1 | Top-5 | Params (MB) | FLOPS |
  | :--: | :--: | :---: | :---: | :---: | :---: |
-  ViT-S    | 16x5x3  | 79.0 | 93.8   | ? |  ? |
-  ViT-B    | 16x5x3  | 81.5  | 95.1  | ? |  ? |
-  ViT-L    | 16x5x3  | 85.2  | 96.8  | ? |  ? |
-  ViT-H    | 16x5x3  | 86.6 | 97.1   | ? |  ? |
+  ViT-S    | 16x5x3  | 79.0 | 93.8   | FT: 51.4 - PT: 89.3 |  ? |
+  ViT-B    | 16x5x3  | 81.5  | 95.1  | FT: 196 - PT: 341 |  ? |
+  ViT-L    | 16x5x3  | 85.2  | 96.8  | FT: 681 - PT: 1200 |  ? |
+  ViT-H    | 16x5x3  | 86.6 | 97.1   | FT: 2360 - PT: ? |  ? |
 
-<sup>?* Official `ViT-H` backbone of VideoMAE has weight issue, details https://github.com/MCG-NJU/VideoMAE/issues/89</sup>
+<sup>?* Official `ViT-H` backbone of VideoMAE has weight issue in pretrained model, details https://github.com/MCG-NJU/VideoMAE/issues/89</sup>
 
 ### Something-Something V2
 
 For SSv2, VideoMAE is trained around **2400** epoch without **any extra data**.
 
-| Backbone | \#Frame | Top-1 | Top-5 | FLOPS | Params |
+| Backbone | \#Frame | Top-1 | Top-5 | Params (MB) | FLOPS |
 | :------: | :-----: | :---: | :---: | :---: | :---: |
-|  ViT-S    | 16x2x3 | 66.8 | 90.3 | ? |  ? |
-|  ViT-B    | 16x2x3 | 70.8  | 92.4  | ? |  ? |
+|  ViT-S    | 16x2x3 | 66.8 | 90.3 | FT: 51.3 - PT: 89.4 |  ? |
+|  ViT-B    | 16x2x3 | 70.8  | 92.4  | FT: 196 - PT: 341 |  ? |
 
 
 ### UCF101
 
 For UCF101, VideoMAE is trained around **3200** epoch without **any extra data**.
 
-| Backbone | \#Frame | Top-1 | Top-5 | FLOPS | Params |
+| Backbone | \#Frame | Top-1 | Top-5 | Params (MB) | FLOPS |
 | :---: | :-----: | :---: | :---: | :---: | :---: |
-|  ViT-B   |  16x5x3  | 91.3 |  98.5 | ? |  ? |
+|  ViT-B   |  16x5x3  | 91.3 |  98.5 | FT: 195 - PT: 341 |  ? |
 
 
 # Visualization 
