@@ -12,7 +12,7 @@ For Kinetrics-400, VideoMAE is trained around **1600** epoch without **any extra
   ViT-L    | 16x5x3  | [SavedModel](https://github.com/innat/VideoMAE/releases/download/v1.1/TFVideoMAE_L_K400_16x224_PT.zip)/[h5](https://github.com/innat/VideoMAE/releases/download/v1.0/TFVideoMAE_L_K400_16x224_PT.h5) | [SavedModel](https://github.com/innat/VideoMAE/releases/download/v1.0/TFVideoMAE_L_K400_16x224_FT.h5)/[h5](https://github.com/innat/VideoMAE/releases/download/v1.0/TFVideoMAE_L_K400_16x224_FT.h5) | 85.2  | 96.8  |
   ViT-H    | 16x5x3  | ? | [SavedModel](https://drive.google.com/drive/folders/1DdwGd-EXD0Rc-05mirZOU3W7b8LlHYJ7?usp=sharing)/[h5](https://drive.google.com/file/d/1ZS7fWw3SbgKpLAdN7QQLm9_pIomwYEtI/view?usp=sharing) | 86.6 | 97.1   |
 
-<sup>?* Official `ViT-H` backbone of VideoMAE has weight issue, details https://github.com/MCG-NJU/VideoMAE/issues/89</sup>
+<sup>?* Official `ViT-H` backbone of VideoMAE has weight issue in pretrained model, details https://github.com/MCG-NJU/VideoMAE/issues/89</sup>
 
 ### Something-Something V2
 
