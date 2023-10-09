@@ -27,8 +27,8 @@ For SSv2, VideoMAE is trained around **2400** epoch without **any extra data**.
 
 | Backbone | \#Frame |                          Pre-train                           |                          Fine-tune                           | Top-1 | Top-5 |
 | :------: | :-----: | :----------------------------------------------------------: | :----------------------------------------------------------: | :---: | :---: |
-|  ViT-S    | 16x2x3  | ? | ? | 66.8 | 90.3 |
-|  ViT-B    | 16x2x3  | ? | ? | 70.8  | 92.4  |
+|  ViT-S    | 16x2x3  | [SavedModel]()/[h5](https://github.com/innat/VideoMAE/releases/download/v1.0/TFVideoMAE_S_SSv2_16x224_PT.h5) | [SavedModel]()/[h5](https://github.com/innat/VideoMAE/releases/download/v1.0/TFVideoMAE_S_SSv2_16x224_FT.h5) | 66.8 | 90.3 |
+|  ViT-B    | 16x2x3  | [SavedModel]()/[h5](https://github.com/innat/VideoMAE/releases/download/v1.0/TFVideoMAE_B_SSv2_16x224_PT.h5) | [SavedModel]()/[h5](https://github.com/innat/VideoMAE/releases/download/v1.0/TFVideoMAE_B_SSv2_16x224_FT.h5) | 70.8  | 92.4  |
 
 
 ### UCF101
@@ -37,4 +37,4 @@ For UCF101, VideoMAE is trained around **3200** epoch without **any extra data**
 
 | Backbone | \#Frame |  Pre-train  |  Fine-tune   | Top-1 | Top-5 |
 | :---: | :-----: | :----: | :----: | :---: | :---: |
-|  ViT-B   |  16x5x3  | ?  | ? | 91.3 |  98.5 |
+|  ViT-B   |  16x5x3  | [SavedModel]()/[h5](https://github.com/innat/VideoMAE/releases/download/v1.0/TFVideoMAE_B_UCF_16x224_PT.h5)  | [SavedModel]()/[h5](https://github.com/innat/VideoMAE/releases/download/v1.0/TFVideoMAE_B_UCF_16x224_FT.h5) | 91.3 |  98.5 |
