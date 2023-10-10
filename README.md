@@ -8,7 +8,7 @@
 This is a unofficial `Keras` reimplementation of [VideoMAE: Masked Autoencoders are Data-Efficient Learners for Self-Supervised Video Pre-Training](https://arxiv.org/abs/2203.12602) model. The official `PyTorch` implementation can be found [here](https://github.com/MCG-NJU/VideoMAE).
 
 
-## Pre Trained Self-Supervised Model
+## Self-Supervised Model
 
 The pre-trained video-mae model consist of encoder and deconder module. This models are trained in self-supervised manner on the benchmark dataset.
 
@@ -59,23 +59,25 @@ The pre-trained and fine-tuned models are listed in [MODEL_ZOO.md](MODEL_ZOO.md)
 For Kinetrics-400, VideoMAE is trained around **1600** epoch without **any extra data**. The following checkpoints are available in both tensorflow `SavedModel` and `h5` format.
 
 
-| Backbone | \#Frame | Top-1 | Top-5 | Params [FT] MB | Params [PT] MB) | FLOPS |
+| Backbone | \#Frame | Top-1 | Top-5 | Params [FT] MB | Params [PT] MB) | FLOPs |
  | :--: | :--: | :---: | :---: | :---: | :---: |  :---: |
-  ViT-S    | 16x5x3  | 79.0 | 93.8   | 51.4 | 89.3 |  ? |
-  ViT-B    | 16x5x3  | 81.5  | 95.1  | 196 | 341 |  ? |
-  ViT-L    | 16x5x3  | 85.2  | 96.8  | 681 | 1200 |  ? |
-  ViT-H    | 16x5x3  | 86.6 | 97.1   | 2360 | ? |  ? |
+  ViT-S    | 16x5x3  | 79.0 | 93.8   | 22 | 24 |  57G |
+  ViT-B    | 16x5x3  | 81.5  | 95.1  | 87 | 94 |  181G |
+  ViT-L    | 16x5x3  | 85.2  | 96.8  | 304 | 343 |  - |
+  ViT-H    | 16x5x3  | 86.6 | 97.1   | 632 | ? |  - |
 
-<sup>?* Official `ViT-H` backbone of VideoMAE has weight issue in pretrained model, details https://github.com/MCG-NJU/VideoMAE/issues/89</sup>
+<sup>?* Official `ViT-H` backbone of VideoMAE has weight issue in pretrained model, details https://github.com/MCG-NJU/VideoMAE/issues/89.</sup>
+<sup>The FLOPs of encoder models (FT) are reported only.</sup>
+
 
 ### Something-Something V2
 
 For SSv2, VideoMAE is trained around **2400** epoch without **any extra data**.
 
-| Backbone | \#Frame | Top-1 | Top-5 | Params [FT] MB | Params [PT] MB | FLOPS |
+| Backbone | \#Frame | Top-1 | Top-5 | Params [FT] MB | Params [PT] MB | FLOPs |
 | :------: | :-----: | :---: | :---: | :---: | :---: | :---: |
-|  ViT-S    | 16x2x3 | 66.8 | 90.3 | 51.3 | 89.4 |  ? |
-|  ViT-B    | 16x2x3 | 70.8  | 92.4  | 196 | 341 |  ? |
+|  ViT-S    | 16x2x3 | 66.8 | 90.3 | 22 | 24 |  57G |
+|  ViT-B    | 16x2x3 | 70.8  | 92.4  | 86 | 94 |  181G |
 
 
 ### UCF101
@@ -84,7 +86,7 @@ For UCF101, VideoMAE is trained around **3200** epoch without **any extra data**
 
 | Backbone | \#Frame | Top-1 | Top-5 | Params [FT] MB | Params [PT] MB | FLOPS |
 | :---: | :-----: | :---: | :---: | :---: | :---: | :---: |
-|  ViT-B   |  16x5x3  | 91.3 |  98.5 | 195 | 341 |  ? |
+|  ViT-B   |  16x5x3  | 91.3 |  98.5 | 86 | 94 |  181G |
 
 
 # Visualization 
