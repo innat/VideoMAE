@@ -138,6 +138,9 @@ Masked Autoencoder with `mask_ratio=0.8` from pretrained self-supervised video-m
 
 
 ##  Citation
+
+If you use this videomae implementation in your research, please cite it using the metadata from our `CITATION.cff` file. 
+
 ```python
 @inproceedings{tong2022videomae,
   title={Video{MAE}: Masked Autoencoders are Data-Efficient Learners for Self-Supervised Video Pre-Training},
