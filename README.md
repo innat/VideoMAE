@@ -64,7 +64,7 @@ from videomae import VideoMAE_ViTS16PT
 TensorShape([1, 1176, 1536])
 ```
 
-A reconstructed results on a sample from SSv2 with `mask_ratio=0.8`
+A reconstructed results on a sample from [SSV2](https://developer.qualcomm.com/software/ai-datasets/something-something) with `mask_ratio=0.8`
 
 ![](./assets/ssv2.gif)
 
