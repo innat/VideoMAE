@@ -3,7 +3,13 @@
 ![videomae](./assets/videomae.jpg)
 
 
-[![keras-2.12.](https://img.shields.io/badge/keras-2.12-darkred)]([?](https://img.shields.io/badge/keras-2.12-darkred)) [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](?) [![HugginFace badge](https://img.shields.io/badge/🤗%20Hugging%20Face-Spaces-yellow.svg)](https://huggingface.co/spaces/innat/VideoMAE) [![HugginFace badge](https://img.shields.io/badge/🤗%20Hugging%20Face-Hub-yellow.svg)](https://huggingface.co/innat/videomae)
+[![arXiv](https://img.shields.io/badge/arXiv-2203.12602-darkred)](https://arxiv.org/abs/2203.12602) [![keras-2.12.](https://img.shields.io/badge/keras-2.12-darkred)]([?](https://img.shields.io/badge/keras-2.12-darkred)) [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](?) [![HugginFace badge](https://img.shields.io/badge/🤗%20Hugging%20Face-Spaces-yellow.svg)](https://huggingface.co/spaces/innat/VideoMAE) [![HugginFace badge](https://img.shields.io/badge/🤗%20Hugging%20Face-Hub-yellow.svg)](https://huggingface.co/innat/videomae)
+
+Video masked autoencoders (**VideoMAE**) are seen as data-efficient learners for self-supervised video pre-training (SSVP). Inspiration was drawn from the recent [ImageMAE](https://arxiv.org/abs/2111.06377), and customized video tube masking with an extremely high ratio was proposed. Due to this simple design, video reconstruction is made a more challenging self-supervision task, leading to the extraction of more effective video representations during this pre-training process. Some hightlights of **VideoMAE**: 
+
+- **Masked Video Modeling for Video Pre-Training**
+- **A Simple, Efficient and Strong Baseline in SSVP**
+- **High performance, but NO extra data required**
 
 This is a unofficial `Keras` reimplementation of [VideoMAE: Masked Autoencoders are Data-Efficient Learners for Self-Supervised Video Pre-Training](https://arxiv.org/abs/2203.12602) model. The official `PyTorch` implementation can be found [here](https://github.com/MCG-NJU/VideoMAE).
 
@@ -16,20 +22,32 @@ This is a unofficial `Keras` reimplementation of [VideoMAE: Masked Autoencoders 
 - **[29-9-2023]**: GPU(s), TPU-VM for fine-tune training are supported.
 - **[27-9-2023]**: Code of VideoMAE in Keras becomes available. 
 
-## Self-Supervised Model
 
-The pre-trained video-mae model consist of encoder and deconder module. This models are trained in self-supervised manner on the benchmark dataset.
+# Install 
+
+```bash
+pip install -U git+https://github.com/innat/VideoMAE.git
+```
+
+# Usage
+
+There are many variants of **VideoMAE** mdoels are available, i.e. `small`, `base`, `large`, and `huge`. And also for benchmark data specific, i.e. [Kinetics-400](https://www.deepmind.com/open-source/kinetics), [SSV2](https://developer.qualcomm.com/software/ai-datasets/something-something), and [UCF101](https://www.crcv.ucf.edu/data/UCF101.php). Check this [release](https://github.com/innat/VideoMAE/releases/tag/v1.0) and [model zoo](https://github.com/innat/VideoMAE/blob/main/MODEL_ZOO.md) page to know details of it.
+
+## Pre-trained Masked Autoencoder
+
+Only the inference part is provied for **pre-trained** VideoMAE models. Using the trained checkpoint, it would be possible to reconstruct the input sample even with high mask ratio. For end-to-end workflow, check this [reconstruction.ipynb](notebooks/reconstruction.ipynb) notebook. Some highlights:
 
 ```python
 from videomae import VideoMAE_ViTS16PT
 
 # pre-trained self-supervised model
 >>> model = VideoMAE_ViTS16PT(num_classes=400)
+>>> model.load_weights('TFVideoMAE_B_K400_16x224_PT.h5')
 
 # tube masking
 >>> tube_mask = TubeMaskingGenerator(
     input_size=window_size, 
-    mask_ratio=0.75
+    mask_ratio=0.80
 )
 >>> make_bool = tube_mask()
 >>> bool_masked_pos_tf = tf.constant(make_bool, dtype=tf.int32)
@@ -44,9 +62,13 @@ from videomae import VideoMAE_ViTS16PT
 TensorShape([1, 1176, 1536])
 ```
 
+A reconstructed results on a sample from SSv2 with `mask_ratio=0.8`
+
+![](./assets/ssv2.gif)
+
 ## Fine Tuned Model
 
-The fine tuned model is the encoder part of pre-trained model which is used to model for specific target classes.
+With the **fine-tuned** VideoMAE checkpoint, it would be possible to evaluate the benchmark datast and also retraining would be possible on custom dataset. For end-to-end workflow, check this quick [retraining.ipynb]() notebook. It supports both multi-gpu and tpu-vm retraining and evaluation. Some highlights:
 
 ```python
 from videomae import VideoMAE_ViTS16FT
@@ -103,13 +125,9 @@ Masked Autoencoder with `mask_ratio=0.8` from pretrained self-supervised video-m
 
 ![](./assets/k400.gif)
 
-![](./assets/ssv2.gif)
-
 ![](./assets/ucf101.gif)
 
-# XLA Compatible
 
-All the variants of converted videomae `keras` models are XLA compatible. They are evaluated on **TPU-VM** to reproduce the official reported scores.
 
 # TODO
 
@@ -119,7 +137,7 @@ All the variants of converted videomae `keras` models are XLA compatible. They a
 - [ ] Convert to `Keras V3`to support multi-framework backend.
 
 ##  Citation
-```yaml
+```python
 @inproceedings{tong2022videomae,
   title={Video{MAE}: Masked Autoencoders are Data-Efficient Learners for Self-Supervised Video Pre-Training},
   author={Zhan Tong and Yibing Song and Jue Wang and Limin Wang},

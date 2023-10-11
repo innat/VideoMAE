@@ -5,7 +5,7 @@ setup(
   packages = find_packages(exclude=['notebooks', 'assets']),
   version = '1.0.0',
   license='MIT',
-  description = 'VideoMAE, A Video Masked Autoencoders - Keras',
+  description = 'VideoMAE, A Video Masked Autoencoders in Keras',
   long_description=open('README.md').read(),
   long_description_content_type='text/markdown',
   author = 'Mohammed Innat',
