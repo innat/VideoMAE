@@ -128,13 +128,12 @@ Masked Autoencoder with `mask_ratio=0.8` from pretrained self-supervised video-m
 ![](./assets/ucf101.gif)
 
 
-
 # TODO
 
-- [x] Multi-GPU suppport.
-- [x] TPU support.
-- [ ] Self-supervised training mechanism.
-- [ ] Convert to `Keras V3`to support multi-framework backend.
+- [x] Custom training code.
+- [ ] Publish on TF-Hub.
+- [ ] Support `Keras V3`to support multi-framework backend.
+
 
 ##  Citation
 ```python
