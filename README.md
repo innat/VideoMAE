@@ -7,6 +7,14 @@
 
 This is a unofficial `Keras` reimplementation of [VideoMAE: Masked Autoencoders are Data-Efficient Learners for Self-Supervised Video Pre-Training](https://arxiv.org/abs/2203.12602) model. The official `PyTorch` implementation can be found [here](https://github.com/MCG-NJU/VideoMAE).
 
+## News
+
+- **[9-10-2023]**: TensorFlow [SavedModel](https://www.tensorflow.org/guide/saved_model) (formet) checkpoints, [link](https://github.com/innat/VideoMAE/releases/tag/v1.1).
+- **[6-10-2023]**: VideoMAE integrated into Huggingface Space.
+- **[4-10-2023]**: VideoMAE checkpoints Something-Something-V2 and UCF101 becomes available, [link](https://github.com/innat/VideoMAE/releases/tag/v1.0).
+- **[3-10-2023]**: VideoMAE checkpoints on Kinetics-400 becomes available, [link](https://github.com/innat/VideoMAE/releases/tag/v1.0).
+- **[29-9-2023]**: Single-GPU, Multi-GPU, TPU-VM are supported. Mixed precision and XLA compatible 
+- **[27-9-2023]**: Code of VideoMAE in Keras becomes available. 
 
 ## Self-Supervised Model
 
@@ -109,3 +117,13 @@ All the variants of converted videomae `keras` models are XLA compatible. They a
 - [x] TPU support.
 - [ ] Self-supervised training mechanism.
 - [ ] Convert to `Keras V3`to support multi-framework backend.
+
+##  Citation
+```yaml
+@inproceedings{tong2022videomae,
+  title={Video{MAE}: Masked Autoencoders are Data-Efficient Learners for Self-Supervised Video Pre-Training},
+  author={Zhan Tong and Yibing Song and Jue Wang and Limin Wang},
+  booktitle={Advances in Neural Information Processing Systems},
+  year={2022}
+}
+```
