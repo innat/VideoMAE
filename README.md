@@ -82,11 +82,11 @@ TensorShape([1, 400])
 
 >>> probabilities = tf.nn.softmax(y_pred_tf)
 >>> probabilities = probabilities.numpy().squeeze(0)
-confidences = {
+>>> confidences = {
     label_map_inv[i]: float(probabilities[i]) \
     for i in np.argsort(probabilities)[::-1]
 }
-confidences
+>>> confidences
 ```
 A classification results on a sample from [Kinetics-400](). 
 
@@ -166,7 +166,7 @@ Some reconstructed video sample using **VideoMAE** with different mask ratio.
 
 # TODO
 
-- [x] Custom training code.
+- [x] Custom fine-tuning code.
 - [ ] Publish on TF-Hub.
 - [ ] Support `Keras V3`to support multi-framework backend.
 
