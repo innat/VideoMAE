@@ -5,9 +5,9 @@ from tensorflow import keras
 from tensorflow.keras import layers
 from tensorflow.keras.initializers import TruncatedNormal
 
-from blocks import TFBlock
-from layers import TFAttention, TFPatchEmbed
-from utils import get_sinusoid_encoding_table_tf
+from .basic import TFBlock
+from ..layers import TFAttention, TFPatchEmbed
+from ..utils import get_sinusoid_encoding_table_tf
 
 
 class TFPretrainVisionTransformerEncoder(keras.Model):

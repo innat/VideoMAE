@@ -43,7 +43,7 @@ Only the inference part is provied for **pre-trained** VideoMAE models. Using th
 from videomae import VideoMAE_ViTS16PT
 
 # pre-trained self-supervised model
->>> model = VideoMAE_ViTS16PT(num_classes=400)
+>>> model = VideoMAE_ViTS16PT(img_size=224, patch_size=16)
 >>> model.load_weights('TFVideoMAE_B_K400_16x224_PT.h5')
 
 # tube masking
@@ -75,7 +75,7 @@ With the **fine-tuned** VideoMAE checkpoint, it would be possible to evaluate th
 ```python
 from videomae import VideoMAE_ViTS16FT
 
->>> model = VideoMAE_ViTS16FT(num_classes=400)
+>>> model = VideoMAE_ViTS16FT(img_size=224, patch_size=16, num_classes=400)
 >>> y = model(np.ones((1, 16, 224, 224, 3)))
 >>> y.shape
 TensorShape([1, 400])

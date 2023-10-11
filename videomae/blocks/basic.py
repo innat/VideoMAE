@@ -3,8 +3,7 @@ from tensorflow import keras
 from tensorflow.keras import layers
 from tensorflow.keras.initializers import Constant
 
-from layers import TFAttention, TFDropPath, TFMlp
-
+from ..layers import TFAttention, TFDropPath, TFMlp
 
 class TFBlock(keras.Model):
     def __init__(
