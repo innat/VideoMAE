@@ -13,7 +13,6 @@ from tensorflow.keras.initializers import RandomNormal
 from videomae.blocks import TFPretrainVisionTransformerDecoder
 from videomae.blocks import TFPretrainVisionTransformerEncoder
 from videomae.utils import get_sinusoid_encoding_table_tf
-
 from .model_configs import MODEL_CONFIGS
 
 

@@ -1,6 +1,5 @@
 import numpy as np
 
-
 class TubeMaskingGenerator:
     def __init__(self, input_size, mask_ratio):
         self.frames, self.height, self.width = input_size

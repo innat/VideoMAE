@@ -13,7 +13,6 @@ from tensorflow.keras.initializers import TruncatedNormal
 from videomae.blocks import TFBlock
 from videomae.layers import TFAttention, TFPatchEmbed
 from videomae.utils import get_sinusoid_encoding_table_tf
-
 from .model_configs import MODEL_CONFIGS
 
 
