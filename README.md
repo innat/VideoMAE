@@ -155,13 +155,14 @@ Some reconstructed video sample using **VideoMAE** with different mask ratio.
 
 | SSv2-testset | mask |
 | :---: | :-----: |
-| ![](./assets/ssv2.gif)   | 0.8  |  
+| ![](./assets/ssv2.gif)   | 0.9  |  
+| ![](./assets/view6.gif)   | 0.9  |  
 | -  | - | 
 
-
 | UCF101-testset | mask |
-| :---: | :-----: |
-| ![](./assets/view5.gif)   | 0.8  |  
+| :---: | :-----: | 
+| ![](./assets/view5.gif)   | 0.8  | 
+| ![](./assets/view7.gif)   | 0.9  |  
 | -  | -  | 
 
 # TODO
