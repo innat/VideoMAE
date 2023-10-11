@@ -3,7 +3,7 @@
 ![videomae](./assets/videomae.jpg)
 
 
-[![arXiv](https://img.shields.io/badge/arXiv-2203.12602-darkred)](https://arxiv.org/abs/2203.12602) [![keras-2.12.](https://img.shields.io/badge/keras-2.12-darkred)]([?](https://img.shields.io/badge/keras-2.12-darkred)) [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](?) [![HugginFace badge](https://img.shields.io/badge/🤗%20Hugging%20Face-Spaces-yellow.svg)](https://huggingface.co/spaces/innat/VideoMAE) [![HugginFace badge](https://img.shields.io/badge/🤗%20Hugging%20Face-Hub-yellow.svg)](https://huggingface.co/innat/videomae)
+[![arXiv](https://img.shields.io/badge/arXiv-2203.12602-darkred)](https://arxiv.org/abs/2203.12602) [![keras-2.12.](https://img.shields.io/badge/keras-2.12-darkred)]([?](https://img.shields.io/badge/keras-2.12-darkred)) [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1BFisOW2yzdvDEBN_0P3M41vQCwF6dTWR?usp=sharing) [![HugginFace badge](https://img.shields.io/badge/🤗%20Hugging%20Face-Spaces-yellow.svg)](https://huggingface.co/spaces/innat/VideoMAE) [![HugginFace badge](https://img.shields.io/badge/🤗%20Hugging%20Face-Hub-yellow.svg)](https://huggingface.co/innat/videomae)
 
 Video masked autoencoders (**VideoMAE**) are seen as data-efficient learners for self-supervised video pre-training (SSVP). Inspiration was drawn from the recent [ImageMAE](https://arxiv.org/abs/2111.06377), and customized video tube masking with an extremely high ratio was proposed. Due to this simple design, video reconstruction is made a more challenging self-supervision task, leading to the extraction of more effective video representations during this pre-training process. Some hightlights of **VideoMAE**: 
 
