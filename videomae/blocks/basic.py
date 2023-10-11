@@ -3,7 +3,7 @@ from tensorflow import keras
 from tensorflow.keras import layers
 from tensorflow.keras.initializers import Constant
 
-from videomae.layers import TFAttention, TFDropPath, TFMlp
+from layers import TFAttention, TFDropPath, TFMlp
 
 
 class TFBlock(keras.Model):

@@ -10,7 +10,7 @@ setup(
     long_description_content_type="text/markdown",
     author="Mohammed Innat",
     author_email="innat.dev@gmail.com",
-    url="https://github.com/innat/DOLG-TensorFlow",
+    url="https://github.com/innat/VideoMAE",
     keywords=["deep learning", "image retrieval", "image recognition"],
     install_requires=[
         "opencv-python>=4.1.2",
@@ -25,6 +25,6 @@ setup(
         "Intended Audience :: Developers",
         "Topic :: Scientific/Engineering :: Artificial Intelligence",
         "License :: OSI Approved :: MIT License",
-        "Programming Language :: Python :: 3.7",
+        "Programming Language :: Python :: 3.8",
     ],
 )

@@ -26,7 +26,9 @@ This is a unofficial `Keras` reimplementation of [VideoMAE: Masked Autoencoders 
 # Install 
 
 ```bash
-pip install -U git+https://github.com/innat/VideoMAE.git
+git clone https://github.com/innat/VideoMAE.git
+cd VideoMAE
+pip install -e . 
 ```
 
 # Usage
