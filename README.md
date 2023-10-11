@@ -79,7 +79,27 @@ from videomae import VideoMAE_ViTS16FT
 >>> y = model(np.ones((1, 16, 224, 224, 3)))
 >>> y.shape
 TensorShape([1, 400])
+
+>>> probabilities = tf.nn.softmax(y_pred_tf)
+>>> probabilities = probabilities.numpy().squeeze(0)
+confidences = {
+    label_map_inv[i]: float(probabilities[i]) \
+    for i in np.argsort(probabilities)[::-1]
+}
+confidences
 ```
+A classification results on a sample from [Kinetics-400](). 
+
+```python
+{
+    'playing_cello': 0.6552159786224365,
+    'snowkiting': 0.0018940207082778215,
+    'deadlifting': 0.0018381892004981637,
+    'playing_guitar': 0.001778001431375742,
+    'playing_recorder': 0.0017528659664094448,
+}
+```
+![](./assets/view1.gif)
 
 
 # Model Zoo
@@ -123,12 +143,26 @@ For UCF101, VideoMAE is trained around **3200** epoch without **any extra data**
 
 # Visualization 
 
-Masked Autoencoder with `mask_ratio=0.8` from pretrained self-supervised video-mae model.
+Some reconstructed video sample using **VideoMAE** with different mask ratio.
 
-![](./assets/k400.gif)
 
-![](./assets/ucf101.gif)
+| Kinetics-400-testset | mask |
+| :---: | :-----: |
+| ![](./assets/k400.gif)   | 0.8  |  
+| ![](./assets/view2.gif)  | 0.8  | 
+| ![](./assets/view3.gif)  | 0.9  |
+| ![](./assets/view4.gif)  | 0.9  |
 
+| SSv2-testset | mask |
+| :---: | :-----: |
+| ![](./assets/ssv2.gif)   | 0.8  |  
+| -  | - | 
+
+
+| UCF101-testset | mask |
+| :---: | :-----: |
+| ![](./assets/view5.gif)   | 0.8  |  
+| -  | -  | 
 
 # TODO
 
