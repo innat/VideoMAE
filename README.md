@@ -10,10 +10,10 @@ This is a unofficial `Keras` reimplementation of [VideoMAE: Masked Autoencoders 
 ## News
 
 - **[9-10-2023]**: TensorFlow [SavedModel](https://www.tensorflow.org/guide/saved_model) (formet) checkpoints, [link](https://github.com/innat/VideoMAE/releases/tag/v1.1).
-- **[6-10-2023]**: VideoMAE integrated into Huggingface Space.
-- **[4-10-2023]**: VideoMAE checkpoints Something-Something-V2 and UCF101 becomes available, [link](https://github.com/innat/VideoMAE/releases/tag/v1.0).
-- **[3-10-2023]**: VideoMAE checkpoints on Kinetics-400 becomes available, [link](https://github.com/innat/VideoMAE/releases/tag/v1.0).
-- **[29-9-2023]**: Single-GPU, Multi-GPU, TPU-VM are supported. Mixed precision and XLA compatible 
+- **[6-10-2023]**: VideoMAE integrated into [Huggingface Space](https://huggingface.co/spaces/innat/VideoMAE).
+- **[4-10-2023]**: VideoMAE checkpoints [SSV2](https://developer.qualcomm.com/software/ai-datasets/something-something) and [UCF101](https://www.crcv.ucf.edu/data/UCF101.php) becomes available, [link](https://github.com/innat/VideoMAE/releases/tag/v1.0).
+- **[3-10-2023]**: VideoMAE checkpoints on [Kinetics-400](https://www.deepmind.com/open-source/kinetics) becomes available, [link](https://github.com/innat/VideoMAE/releases/tag/v1.0).
+- **[29-9-2023]**: GPU(s), TPU-VM for fine-tune training are supported.
 - **[27-9-2023]**: Code of VideoMAE in Keras becomes available. 
 
 ## Self-Supervised Model
