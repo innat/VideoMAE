@@ -1,6 +1,6 @@
-
 import tensorflow as tf
 from tensorflow import keras
+
 
 class TFPatchEmbed(keras.Model):
     def __init__(
@@ -13,29 +13,28 @@ class TFPatchEmbed(keras.Model):
         **kwargs,
     ):
         super().__init__(**kwargs)
-        self.patch_size=(patch_size,)*2
-        self.img_size = (input_size,)*2
-        
+        self.patch_size = (patch_size,) * 2
+        self.img_size = (input_size,) * 2
+
         assert self.img_size[1] % self.patch_size[1] == 0
         assert self.img_size[0] % self.patch_size[0] == 0
-  
+
         self.num_patches = (
             (self.img_size[1] // self.patch_size[1])
             * (self.img_size[0] // self.patch_size[0])
             * (num_frames // tubelet_size)
         )
         kernel_size = [tubelet_size] + list(self.patch_size)
-        
+
         self.proj = keras.layers.Conv3D(
             embed_dim,
             kernel_size,
             strides=kernel_size,
             padding="valid",
-            name='patch_embed_proj'
+            name="patch_embed_proj",
         )
 
     def call(self, x):
-        
         B, T, H, W, C = tf.unstack(tf.shape(x))
 
         tf.debugging.assert_equal(
@@ -51,5 +50,5 @@ class TFPatchEmbed(keras.Model):
 
         x = self.proj(x)
         new_shape = tf.concat([tf.shape(x)[:1], [-1], tf.shape(x)[-1:]], axis=0)
-        x = tf.reshape(x, new_shape) 
+        x = tf.reshape(x, new_shape)
         return x

@@ -1,4 +1,3 @@
-
 MODEL_CONFIGS = {
     "TFVideoMAE_S_16x224_FT": {
         "img_size": 224,
@@ -11,7 +10,6 @@ MODEL_CONFIGS = {
         "drop_path_rate": 0.1,
         "num_classes": 400,
     },
-
     "TFVideoMAE_B_16x224_FT": {
         "img_size": 224,
         "patch_size": 16,
@@ -23,7 +21,6 @@ MODEL_CONFIGS = {
         "drop_path_rate": 0.1,
         "num_classes": 400,
     },
-
     "TFVideoMAE_B_16x384_FT": {
         "img_size": 384,
         "patch_size": 16,
@@ -35,7 +32,6 @@ MODEL_CONFIGS = {
         "drop_path_rate": 0.1,
         "num_classes": 400,
     },
-
     "TFVideoMAE_L_16x224_FT": {
         "img_size": 224,
         "patch_size": 16,
@@ -47,7 +43,6 @@ MODEL_CONFIGS = {
         "drop_path_rate": 0.1,
         "num_classes": 400,
     },
-
     "TFVideoMAE_L_16x384_FT": {
         "img_size": 384,
         "patch_size": 16,
@@ -59,7 +54,6 @@ MODEL_CONFIGS = {
         "drop_path_rate": 0.1,
         "num_classes": 400,
     },
-
     "TFVideoMAE_L_16x512_FT": {
         "img_size": 512,
         "patch_size": 16,
@@ -71,7 +65,6 @@ MODEL_CONFIGS = {
         "drop_path_rate": 0.1,
         "num_classes": 400,
     },
-
     "TFVideoMAE_H_16x224_FT": {
         "img_size": 224,
         "patch_size": 16,
@@ -83,65 +76,60 @@ MODEL_CONFIGS = {
         "drop_path_rate": 0.1,
         "num_classes": 400,
     },
-
     "TFVideoMAE_S_16x224_PT": {
-        "img_size":224,
+        "img_size": 224,
         "patch_size": 16,
-        "encoder_embed_dim":384,
-        "encoder_depth":12,
-        "encoder_num_heads":6,
-        "encoder_num_classes":0,
-        "decoder_num_classes":1536, 
-        "decoder_embed_dim":192, 
-        "decoder_num_heads":3,
-        "decoder_depth":4,
-        "mlp_ratio":4,
-        "qkv_bias":True,
+        "encoder_embed_dim": 384,
+        "encoder_depth": 12,
+        "encoder_num_heads": 6,
+        "encoder_num_classes": 0,
+        "decoder_num_classes": 1536,
+        "decoder_embed_dim": 192,
+        "decoder_num_heads": 3,
+        "decoder_depth": 4,
+        "mlp_ratio": 4,
+        "qkv_bias": True,
     },
-
     "TFVideoMAE_B_16x224_PT": {
-        "img_size":224,
+        "img_size": 224,
         "patch_size": 16,
-        "encoder_embed_dim":768,
-        "encoder_depth":12,
-        "encoder_num_heads":12,
-        "encoder_num_classes":0,
-        "decoder_num_classes":1536, 
-        "decoder_embed_dim":384, 
-        "decoder_num_heads":6,
-        "decoder_depth":4,
-        "mlp_ratio":4,
-        "qkv_bias":True,
+        "encoder_embed_dim": 768,
+        "encoder_depth": 12,
+        "encoder_num_heads": 12,
+        "encoder_num_classes": 0,
+        "decoder_num_classes": 1536,
+        "decoder_embed_dim": 384,
+        "decoder_num_heads": 6,
+        "decoder_depth": 4,
+        "mlp_ratio": 4,
+        "qkv_bias": True,
     },
-
     "TFVideoMAE_L_16x224_PT": {
-        "img_size":224,
+        "img_size": 224,
         "patch_size": 16,
-        "encoder_embed_dim":1024,
-        "encoder_depth":24,
-        "encoder_num_heads":16,
-        "encoder_num_classes":0,
-        "decoder_num_classes":1536, 
-        "decoder_embed_dim":512, 
-        "decoder_num_heads":8,
-        "decoder_depth":12,
-        "mlp_ratio":4,
-        "qkv_bias":True,
+        "encoder_embed_dim": 1024,
+        "encoder_depth": 24,
+        "encoder_num_heads": 16,
+        "encoder_num_classes": 0,
+        "decoder_num_classes": 1536,
+        "decoder_embed_dim": 512,
+        "decoder_num_heads": 8,
+        "decoder_depth": 12,
+        "mlp_ratio": 4,
+        "qkv_bias": True,
     },
-
     "TFVideoMAE_H_16x224_PT": {
-        "img_size":224,
+        "img_size": 224,
         "patch_size": 16,
-        "encoder_embed_dim":1280,
-        "encoder_depth":32,
-        "encoder_num_heads":16,
-        "encoder_num_classes":0,
-        "decoder_num_classes":1536, 
-        "decoder_embed_dim":640, 
-        "decoder_num_heads":8,
-        "decoder_depth":12,
-        "mlp_ratio":4,
-        "qkv_bias":True,
+        "encoder_embed_dim": 1280,
+        "encoder_depth": 32,
+        "encoder_num_heads": 16,
+        "encoder_num_classes": 0,
+        "decoder_num_classes": 1536,
+        "decoder_embed_dim": 640,
+        "decoder_num_heads": 8,
+        "decoder_depth": 12,
+        "mlp_ratio": 4,
+        "qkv_bias": True,
     },
-
 }

@@ -1,7 +1,7 @@
-
 import tensorflow as tf
 from tensorflow import keras
 from tensorflow.keras import layers
+
 
 class TFDropPath(layers.Layer):
     def __init__(self, rate=0.5, seed=None, **kwargs):

@@ -1,6 +1,6 @@
-
 import tensorflow as tf
 from tensorflow.keras import layers
+
 
 class TFMlp(layers.Layer):
     def __init__(
