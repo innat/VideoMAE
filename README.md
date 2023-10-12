@@ -11,7 +11,7 @@ Video masked autoencoders (**VideoMAE**) are seen as data-efficient learners for
 - **A Simple, Efficient and Strong Baseline in SSVP**
 - **High performance, but NO extra data required**
 
-This is a unofficial `Keras` reimplementation of [VideoMAE: Masked Autoencoders are Data-Efficient Learners for Self-Supervised Video Pre-Training](https://arxiv.org/abs/2203.12602) model. The official `PyTorch` implementation can be found [here](https://github.com/MCG-NJU/VideoMAE).
+This is a unofficial `Keras` implementation of [VideoMAE: Masked Autoencoders are Data-Efficient Learners for Self-Supervised Video Pre-Training](https://arxiv.org/abs/2203.12602) model. The official `PyTorch` implementation can be found [here](https://github.com/MCG-NJU/VideoMAE).
 
 ## News
 
@@ -33,11 +33,11 @@ pip install -e .
 
 # Usage
 
-There are many variants of **VideoMAE** mdoels are available, i.e. `small`, `base`, `large`, and `huge`. And also for benchmark data specific, i.e. [Kinetics-400](https://www.deepmind.com/open-source/kinetics), [SSV2](https://developer.qualcomm.com/software/ai-datasets/something-something), and [UCF101](https://www.crcv.ucf.edu/data/UCF101.php). Check this [release](https://github.com/innat/VideoMAE/releases/tag/v1.0) and [model zoo](https://github.com/innat/VideoMAE/blob/main/MODEL_ZOO.md) page to know details of it.
+There are many variants of **VideoMAE** mdoels available, i.e. `small`, `base`, `large`, and `huge`. And also for benchmark data specific, i.e. [Kinetics-400](https://www.deepmind.com/open-source/kinetics), [SSV2](https://developer.qualcomm.com/software/ai-datasets/something-something), and [UCF101](https://www.crcv.ucf.edu/data/UCF101.php). Check this [release](https://github.com/innat/VideoMAE/releases/tag/v1.0) and [model zoo](https://github.com/innat/VideoMAE/blob/main/MODEL_ZOO.md) page to know details of it.
 
 ## Pre-trained Masked Autoencoder
 
-Only the inference part is provied for **pre-trained** VideoMAE models. Using the trained checkpoint, it would be possible to reconstruct the input sample even with high mask ratio. For end-to-end workflow, check this [reconstruction.ipynb](notebooks/reconstruction.ipynb) notebook. Some highlights:
+Only the inference part is provided for **pre-trained** VideoMAE models. Using the trained checkpoint, it would be possible to reconstruct the input sample even with high mask ratio. For end-to-end workflow, check this [reconstruction.ipynb](notebooks/reconstruction.ipynb) notebook. Some highlights:
 
 ```python
 from videomae import VideoMAE_ViTS16PT
