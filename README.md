@@ -57,9 +57,9 @@ from videomae import VideoMAE_ViTS16PT
 >>> bool_masked_pos_tf = tf.cast(bool_masked_pos_tf, tf.bool)
 
 # running
->>> pred_tf = model(
-    tf.ones(shape=(1, 16, 224, 224, 3)), bool_masked_pos_tf
-)
+>>> container = read_video('sample.mp4')
+>>> frames = frame_sampling(container, num_frames=16)
+>>> pred_tf = model(frames, bool_masked_pos_tf)
 >>> pred_tf.numpy().shape
 TensorShape([1, 1176, 1536])
 ```
@@ -76,7 +76,9 @@ With the **fine-tuned** VideoMAE checkpoint, it would be possible to evaluate th
 from videomae import VideoMAE_ViTS16FT
 
 >>> model = VideoMAE_ViTS16FT(img_size=224, patch_size=16, num_classes=400)
->>> y = model(np.ones((1, 16, 224, 224, 3)))
+>>> container = read_video('sample.mp4')
+>>> frames = frame_sampling(container, num_frames=16)
+>>> y = model(frames)
 >>> y.shape
 TensorShape([1, 400])
 
