@@ -93,16 +93,9 @@ TensorShape([1, 400])
 ```
 A classification results on a sample from [Kinetics-400](). 
 
-```python
-{
-    'playing_cello': 0.6552159786224365,
-    'snowkiting': 0.0018940207082778215,
-    'deadlifting': 0.0018381892004981637,
-    'playing_guitar': 0.001778001431375742,
-    'playing_recorder': 0.0017528659664094448,
-}
-```
-![](./assets/view1.gif)
+| Video | Top-5 |
+|:---:|:---|
+| ![](./assets/view1.gif) | <pre>{<br>    'playing_cello': 0.6552159786224365,<br>    'snowkiting': 0.0018940207082778215,<br>    'deadlifting': 0.0018381892004981637,<br>    'playing_guitar': 0.001778001431375742,<br>    'playing_recorder': 0.0017528659664094448<br>}</pre> |
 
 
 # Model Zoo
