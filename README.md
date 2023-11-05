@@ -16,6 +16,9 @@ This is a unofficial `Keras` implementation of [VideoMAE: Masked Autoencoders ar
 
 ## News
 
+- **[27-10-2023]:** Code of [Video-FocalNet](https://github.com/innat/Video-FocalNets) in Keras becomes available.
+- **[15-10-2023]:** Code of [UniFormerV2](https://github.com/innat/UniFormerV2) (UFV2) in Keras becomes available.
+- **[06-10-2023]:** Code of [Video Swin Transformer](https://github.com/innat/VideoSwin) in Keras becomes available.
 - **[24-10-2023]**: [Kinetics-400](https://www.deepmind.com/open-source/kinetics) test data set can be found on kaggle, [link](https://www.kaggle.com/datasets/ipythonx/k4testset/data?select=videos_val).
 - **[9-10-2023]**: TensorFlow [SavedModel](https://www.tensorflow.org/guide/saved_model) (formet) checkpoints, [link](https://github.com/innat/VideoMAE/releases/tag/v1.1).
 - **[6-10-2023]**: VideoMAE integrated into [Huggingface Space](https://huggingface.co/spaces/innat/VideoMAE).
