@@ -50,8 +50,8 @@ inputs_pt = torch.tensor(np.random.rand(4, 3, 16, 224, 224).astype('float32'))
 inputs_tf = inputs_pt.detach().numpy().transpose(0,2,3,4,1)
 
 model_pt.eval()
-y_pred = model_pt(inputs_pt.float()) # UCF-101 model
-y_pred_pt = y_pred.detach().numpy()
+y_pred_pt = model_pt(inputs_pt.float()) # UCF-101 model
+y_pred_pt = y_pred_pt.detach().numpy()
 y_pred_pt.shape
 (4, 101)
 
@@ -130,5 +130,5 @@ np.testing.assert_allclose(
 
 ```python
 call_fn = tf.function(loaded_model, jit_compile=True)
-%timeit _ = call_fn(inputs_chanel_first, training=False)
+%timeit _ = call_fn(y_pred_tf, training=False)
 ```
