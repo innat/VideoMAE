@@ -116,8 +116,8 @@ tf.nest.map_structure(
 **Weight matching between TF SavedModel vs `torch` model.**
 
 ```python
-y_pred_pt = model_pt(inputs.float())
-y_pred_tf = loaded_model(inputs_chanel_first, training=False)
+y_pred_pt = model_pt(inputs_pt.float())
+y_pred_tf = loaded_model(inputs_tf, training=False)
 print(y_pred_pt.shape, y_pred_tf.shape)
 np.testing.assert_allclose(
     y_pred_tf.numpy(), 
