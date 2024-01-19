@@ -130,5 +130,5 @@ np.testing.assert_allclose(
 
 ```python
 call_fn = tf.function(loaded_model, jit_compile=True)
-%timeit _ = call_fn(y_pred_tf, training=False)
+%timeit _ = call_fn(inputs_tf, training=False)
 ```
