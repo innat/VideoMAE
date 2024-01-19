@@ -43,11 +43,11 @@ For UCF101, VideoMAE is trained around **3200** epoch without **any extra data**
 
 # Weight Comparison
 
-The `torch` video-mae model can be loaded from the official [repo](https://github.com/MCG-NJU/VideoMAE). Following are some quick test of both implementation, showing logit matching. Please note, here Only fine-tune models (**UCF-101**) are used to demonstrate. 
+The `torch` video-mae model can be loaded from the official [repo](https://github.com/MCG-NJU/VideoMAE). Following are some quick test of both implementation, showing logit matching. Please note, here only fine-tune models (**UCF-101**) are used to demonstrate. 
 
 ```python
 inputs_pt = torch.tensor(np.random.rand(4, 3, 16, 224, 224).astype('float32'))
-inputs_tf = inputs.detach().numpy().transpose(0,2,3,4,1)
+inputs_tf = inputs_pt.detach().numpy().transpose(0,2,3,4,1)
 
 model_pt.eval()
 y_pred = model_pt(inputs_pt.float()) # UCF-101 model
